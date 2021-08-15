@@ -12,7 +12,6 @@ countd = dt.date(2022, 4, 1) - dt.date.today()
 countd_days = countd.days
 countd_weeks = math.ceil(countd_days / 7)
 yearProgress = (365 - countd_days)
-print(yearProgress)
 
 root = tkinter.Tk()
 root.title(u"Countdown to Haven")
