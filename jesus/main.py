@@ -1,14 +1,18 @@
 import sys
 import tkinter
+from tkinter import ttk
 import datetime as dt
 import math
 
-def closeWindow(event):
+
+def closeWindow():
     sys.exit(0)
 
 countd = dt.date(2022, 4, 1) - dt.date.today()
 countd_days = countd.days
 countd_weeks = math.ceil(countd_days / 7)
+yearProgress = (365 - countd_days)
+print(yearProgress)
 
 root = tkinter.Tk()
 root.title(u"Countdown to Haven")
@@ -26,8 +30,20 @@ Static2 = tkinter.Label(\
 )
 Static2.pack()
 
-button = tkinter.Button(text=u"OK")
-button.bind("<Button-1>", closeWindow)
+pb2 = ttk.Progressbar(\
+        root,\
+        orient = "horizontal",\
+        length = 300,\
+        mode = "determinate",\
+        value = yearProgress,\
+        maximum = 365,\
+)
+pb2.pack()
+
+button = tkinter.Button(root, text="OK", command=closeWindow)
 button.pack()
+
+button2 = tkinter.Button(root, text="NOT OK", command=closeWindow)
+button2.pack()
 
 root.mainloop()
