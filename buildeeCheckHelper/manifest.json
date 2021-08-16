@@ -5,9 +5,10 @@
     "description": "This Extension can help your suck task",
 
     "content_scripts": [{
-        "matches": ["file:///Users/Knight-of-Skyrim/Downloads/%E3%81%B5%E3%82%99%E3%81%84%EF%BD%8C%E3%81%A6%E3%82%99%E3%81%88/buildee%E4%BD%9C%E6%A5%AD%E5%93%A1%E6%A4%9C%E7%B4%A2%E7%94%BB%E9%9D%A2/%E5%8A%B4%E5%8B%99%E5%AE%89%E5%85%A8%20-%20%E7%8F%BE%E5%A0%B4%E5%86%85%E4%BD%9C%E6%A5%AD%E5%93%A1%E6%A4%9C%E7%B4%A2.html"],
+        "matches": ["https://greenfile.buildee.jp/search/worker/list*"],
         "js": [
             "content.js"
-        ]
+        ],
+        "run_at":"document_end"
     }]
 }
