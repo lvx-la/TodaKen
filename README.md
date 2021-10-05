@@ -1,2 +1,2 @@
 # TodaKen
-this repo use for toda constructor
+this repo use for Toda Construction
