@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "showCountDownToHell",
+    "version": "1.0.0",
+    "description": "This Extension can show countdown to hell at top of a whole company site",
+
+    "content_scripts": [{
+        "matches": ["http://portal.toda.co.jp/cgi-bin/login.cgi"],
+        "js": [
+            "content.js"
+        ],
+        "run_at":"document_end"
+    }]
+}
