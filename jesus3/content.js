@@ -1,4 +1,4 @@
-window.onload = function () {
+insuite_main.onload = function () {
     let countDownDays;
     let countDownWeeks;
     let progress;
@@ -27,15 +27,14 @@ window.onload = function () {
         var cloneElement = contentArea.cloneNode(true);
         cloneElement.id = "personal_policy";
 
-        var divI = cloneElement.firstElementChild;
-        divI.children[0].href = "www.google.com";
-        divI.children[1].textContent = "今こそ未来（来年度）を見据え耐え抜く時だ";
+        cloneElement.children[0].src = "https://lh3.googleusercontent.com/YXMfHnvsXNU8K6ItxNhYOUwy2vClaRpH_KgFDWR5Ki4BA-zlTGaYJjEMRgew4mYkpbbAVMVzMlfNpTNFQfYYSkynMGIHsrZDgw7r3JI=s660"; //画像ファイルにしとく
+        cloneElement.children[1].textContent = "今こそ未来（来年度）を見据え耐え抜く時だ";
         
         var apendProgressBar = document.createElement("progress");
         apendProgressBar.setAttribute("id", "countdownToHell");
         apendProgressBar.setAttribute("value", progress);
         apendProgressBar.setAttribute("max", howManyDays);
-        divI.appendChild(apendProgressBar);
+        cloneElement.appendChild(apendProgressBar);
         
         contentArea.after(cloneElement);
 
@@ -47,14 +46,14 @@ window.onload = function () {
         if(err != 0){
             console.log("DEATH AT Function getDaysnWeeks");
         }
+        //JSでこれめっちゃ意味なかった
 
-        document.getElementById("cDownDays").innerText = countDownDays;
-        document.getElementById("cDownWeeks").innerText = countDownWeeks;
-
-        shitenPolicyDiv = document.getElementById("parentDiv");
-        err = duplicate(shitenPolicyDiv);
-        if(err != 0) {
-            console.log("DEATH AT Function duplicate");
+        //TODO DOMの指定だけできれば後は完成（のはず）
+        if (insuite_main.querySelectorAll('.message-box').length) {
+            shitenPolicyClass = insuite_main.getElementsByClassName("message-box");
+            duplicate(shitenPolicyClass[1]);
+        } else {
+            console.log("Could Not Find any classes in documents");
         }
     }
 

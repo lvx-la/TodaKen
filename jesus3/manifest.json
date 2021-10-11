@@ -5,10 +5,11 @@
     "description": "This Extension can show countdown to hell at top of a whole company site",
 
     "content_scripts": [{
-        "matches": ["http://portal.toda.co.jp/cgi-bin/login.cgi"],
+        "matches": ["file:///Users/Knight-of-Skyrim/Downloads/%E3%83%86%E3%82%99%E3%83%95%E3%82%99/%E5%85%A8%E7%A4%BE%E3%83%9B%E3%82%9A%E3%83%BC%E3%82%BF%E3%83%AB.html"],
         "js": [
             "content.js"
         ],
-        "run_at":"document_end"
+        "run_at":"document_end",
+        "all_frames": true
     }]
 }
